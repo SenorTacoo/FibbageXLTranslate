@@ -60,6 +60,7 @@
             this.rtbTranslatedQuestion = new System.Windows.Forms.RichTextBox();
             this.rtbOrgQuestion = new System.Windows.Forms.RichTextBox();
             this.lQuestion = new System.Windows.Forms.Label();
+            this.lTranslated = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestions)).BeginInit();
             this.pEditable.SuspendLayout();
@@ -93,21 +94,21 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -148,7 +149,7 @@
             this.dgvQuestions.MultiSelect = false;
             this.dgvQuestions.Name = "dgvQuestions";
             this.dgvQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuestions.Size = new System.Drawing.Size(802, 261);
+            this.dgvQuestions.Size = new System.Drawing.Size(802, 248);
             this.dgvQuestions.StandardTab = true;
             this.dgvQuestions.TabIndex = 0;
             this.dgvQuestions.TabStop = false;
@@ -423,12 +424,21 @@
             this.lQuestion.Text = "Question";
             this.lQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lTranslated
+            // 
+            this.lTranslated.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lTranslated.Location = new System.Drawing.Point(0, 272);
+            this.lTranslated.Name = "lTranslated";
+            this.lTranslated.Size = new System.Drawing.Size(802, 13);
+            this.lTranslated.TabIndex = 6;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 450);
             this.Controls.Add(this.dgvQuestions);
+            this.Controls.Add(this.lTranslated);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.pEditable);
             this.Controls.Add(this.menuStrip1);
@@ -483,6 +493,7 @@
         private System.Windows.Forms.Label lAlternateSpelling;
         private System.Windows.Forms.Label lCorrectAnswer;
         private System.Windows.Forms.Label lQuestion;
+        private System.Windows.Forms.Label lTranslated;
     }
 }
 

@@ -117,6 +117,17 @@ namespace FibbageQEdit
 
             rtbOrgAlternateSpelling.Text = FEditQuestion.OriginalAlternateSpelling;
             rtbTranslatedAlternateSpelling.Text = FEditQuestion.TranslatedAlternateSpelling;
+
+            MultiTranslateData src = (MultiTranslateData) dgvQuestions.DataSource;
+            var translated = 0;
+            foreach (var single in src)
+            {
+                if (((single.OriginalQuestion == "") || (single.TranslatedQuestion != "")) &&
+                   ((single.OriginalCorrectAnswer == "") || (single.TranslatedCorrectAnswer != "")) &&
+                   ((single.OriginalSuggestion == "") || (single.TranslatedSuggestion != "")))
+                   translated++;
+            }
+            lTranslated.Text = string.Format("Translated {0} out of {1} {2:0.00}%", translated, src.Count, Decimal.Divide(translated * 100, src.Count));
         }
 
         private void RtbTranslatedQuestion_TextChanged(object sender, EventArgs e)
