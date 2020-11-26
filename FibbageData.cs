@@ -48,17 +48,17 @@ namespace FibbageQEdit
         }
         private string GetTranslateDir()
         {
-            if (!Directory.Exists(FInstallDir + TRANSLATE_DIR))
+            if (!Directory.Exists(GetContentDir() + TRANSLATE_DIR))
             {
-                Directory.CreateDirectory(FInstallDir + TRANSLATE_DIR);
+                Directory.CreateDirectory(GetContentDir() + TRANSLATE_DIR);
             }
-            return FInstallDir + TRANSLATE_DIR;
+            return GetContentDir() + TRANSLATE_DIR;
         }
 
         public void SaveToFile()
         {
-            FShortieTransData.SaveToFile(GetContentDir() + TRANSLATE_DIR + SHORTIE_DIR);
-            FFinalTransData.SaveToFile(GetContentDir() + TRANSLATE_DIR + FINALFIBBAGE_DIR);
+            FShortieTransData.SaveToFile(GetTranslateDir() + SHORTIE_DIR);
+            FFinalTransData.SaveToFile(GetTranslateDir() + FINALFIBBAGE_DIR);
         }
     }
 }
