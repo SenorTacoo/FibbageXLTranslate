@@ -206,8 +206,13 @@ namespace FibbageQEdit
                 {
                     dgvQuestions.ClearSelection();
                     dgvQuestions.Rows[newRowIndex].Selected = true;
-                    dgvQuestions.FirstDisplayedScrollingRowIndex = newRowIndex;
+                    if (newRowIndex < 5)
+                        dgvQuestions.FirstDisplayedScrollingRowIndex = newRowIndex;
+                    else
+                        dgvQuestions.FirstDisplayedScrollingRowIndex = newRowIndex - 5;
+
                     DgvQuestions_RowEnter(sender, new DataGridViewCellEventArgs(0, newRowIndex));
+                    rtbTranslatedQuestion.Focus();
                 }
             }
         }
