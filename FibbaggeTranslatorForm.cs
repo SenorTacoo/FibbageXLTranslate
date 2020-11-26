@@ -214,6 +214,13 @@ namespace FibbageQEdit
                     DgvQuestions_RowEnter(sender, new DataGridViewCellEventArgs(0, newRowIndex));
                     rtbTranslatedQuestion.Focus();
                 }
+            } else if (e.Control && e.KeyCode == Keys.Q)
+            {
+                FEditQuestion.TranslatedAlternateSpelling = FEditQuestion.OriginalAlternateSpelling;
+                FEditQuestion.TranslatedCorrectAnswer = FEditQuestion.OriginalCorrectAnswer;
+                FEditQuestion.TranslatedQuestion = FEditQuestion.OriginalQuestion;
+                FEditQuestion.TranslatedSuggestion = FEditQuestion.OriginalSuggestion;
+                ProcessShowEditQuestion();
             }
         }
 
